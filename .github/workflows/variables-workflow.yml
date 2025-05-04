@@ -12,17 +12,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job use_env_vars execution - from $owner_name - with repo variable value = $my_repo_var_value"
-
-
-> Commit the changes
-> Actions
-on: [push]
-
-env:
-  owner_name: Abhi
-
-jobs:
-  use_env_var:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Job use_env_vars execution - from $owner_name"
