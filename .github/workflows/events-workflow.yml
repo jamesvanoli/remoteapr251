@@ -12,6 +12,25 @@ on:
       - main
 
 jobs:
+  reuse_job:
+    uses: ./.github/workflows/reuseme.yml
+
+  main_job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "----TRIGGERED the main branch workflow - event based-----"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  fork:
+    branches:
+      - main
+
+jobs:
   main_job:
     runs-on: ubuntu-latest
     steps:
